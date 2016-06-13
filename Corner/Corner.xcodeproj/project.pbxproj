@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3062F4FF1D0E8C93007C9F9F /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3062F4FE1D0E8C93007C9F9F /* manifest.plist */; };
+		3062F5011D0EBEC9007C9F9F /* CRCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062F5001D0EBEC9007C9F9F /* CRCategoryViewController.swift */; };
 		4844D5E91D0D05660082A84C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D5E81D0D05660082A84C /* AppDelegate.swift */; };
 		4844D5EB1D0D05660082A84C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D5EA1D0D05660082A84C /* ViewController.swift */; };
 		4844D5EE1D0D05660082A84C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4844D5EC1D0D05660082A84C /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3062F4FE1D0E8C93007C9F9F /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
+		3062F5001D0EBEC9007C9F9F /* CRCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRCategoryViewController.swift; sourceTree = "<group>"; };
 		4844D5E51D0D05660082A84C /* Corner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Corner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4844D5E81D0D05660082A84C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4844D5EA1D0D05660082A84C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				4844D5EF1D0D05660082A84C /* Assets.xcassets */,
 				4844D5F11D0D05660082A84C /* LaunchScreen.storyboard */,
 				4844D5F41D0D05660082A84C /* Info.plist */,
+				3062F4FE1D0E8C93007C9F9F /* manifest.plist */,
 			);
 			path = Corner;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				4844D6171D0D0C490082A84C /* CRHotViewController.swift */,
 				4844D6191D0D11100082A84C /* CRAdViewController.swift */,
 				4844D6231D0D39C70082A84C /* CRMainViewController.swift */,
+				3062F5001D0EBEC9007C9F9F /* CRCategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488AE1A41D0D43D5004AA676 /* CRHelpCell.xib in Resources */,
+				3062F4FF1D0E8C93007C9F9F /* manifest.plist in Resources */,
 				4844D5F31D0D05660082A84C /* LaunchScreen.storyboard in Resources */,
 				4844D5F01D0D05660082A84C /* Assets.xcassets in Resources */,
 				4844D6221D0D2AD90082A84C /* CRCategoryCell.xib in Resources */,
@@ -387,6 +394,7 @@
 			files = (
 				4844D6241D0D39C70082A84C /* CRMainViewController.swift in Sources */,
 				488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */,
+				3062F5011D0EBEC9007C9F9F /* CRCategoryViewController.swift in Sources */,
 				4844D61A1D0D11100082A84C /* CRAdViewController.swift in Sources */,
 				4844D6211D0D2AD90082A84C /* CRCategoryCell.swift in Sources */,
 				4844D5EB1D0D05660082A84C /* ViewController.swift in Sources */,
@@ -537,6 +545,7 @@
 			baseConfigurationReference = 5775F756E344D169A34AAF6B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
 				INFOPLIST_FILE = Corner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -548,6 +557,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ijiejiao.Corner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "13a51caa-7baa-41bd-8e1a-239e2cd73c82";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -556,6 +567,8 @@
 			baseConfigurationReference = BA99EBDA9122527261EE90B0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
 				INFOPLIST_FILE = Corner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -567,6 +580,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ijiejiao.Corner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "13a51caa-7baa-41bd-8e1a-239e2cd73c82";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

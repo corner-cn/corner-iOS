@@ -20,6 +20,8 @@ class CRHelpCell: UITableViewCell {
     
     @IBOutlet weak var contentImageView: UIImageView!
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

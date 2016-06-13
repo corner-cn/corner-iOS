@@ -10,20 +10,35 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="急需帮助" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCZ-AK-bed">
-                    <rect key="frame" x="20" y="19" width="56" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Go3-aA-fx7">
+                    <rect key="frame" x="8" y="21" width="76" height="15"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="4Pc-dU-X88">
+                            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="4t2-cX-npk"/>
+                                <constraint firstAttribute="width" constant="15" id="x4S-KB-laZ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="急需帮助" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCZ-AK-bed">
+                            <rect key="frame" x="20" y="0.0" width="56" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="NCZ-AK-bed" secondAttribute="bottom" constant="8" id="NS9-FY-I3a"/>
-                <constraint firstItem="NCZ-AK-bed" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="bc5-v2-Qev"/>
+                <constraint firstAttribute="bottom" secondItem="Go3-aA-fx7" secondAttribute="bottom" constant="8" id="qpU-8T-d1u"/>
+                <constraint firstItem="Go3-aA-fx7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="uYy-Ve-lfI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="480" y="247"/>
         </view>
     </objects>
+    <resources>
+        <image name="help" width="15" height="16"/>
+    </resources>
 </document>

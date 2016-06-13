@@ -50,20 +50,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-gs-Ray">
-                                <rect key="frame" x="49" y="110" width="15" height="15"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-gs-Ray">
+                                <rect key="frame" x="49" y="112" width="10" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="99k-2x-fjy"/>
-                                    <constraint firstAttribute="width" constant="15" id="ZbQ-yq-IlE"/>
+                                    <constraint firstAttribute="height" constant="10" id="99k-2x-fjy"/>
+                                    <constraint firstAttribute="width" constant="10" id="ZbQ-yq-IlE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200人伸出援手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6y-Ur-sy9">
-                                <rect key="frame" x="69" y="110" width="63" height="15"/>
+                                <rect key="frame" x="64" y="110" width="63" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="NGC-99-23w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-qY-9Pq">
+                                <rect key="frame" x="192" y="111.5" width="21" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -86,6 +92,8 @@
                             <constraint firstItem="l6y-Ur-sy9" firstAttribute="leading" secondItem="qDh-gs-Ray" secondAttribute="trailing" constant="5" id="kSB-po-V5u"/>
                             <constraint firstItem="1dR-bS-fzy" firstAttribute="top" secondItem="iRM-Ub-zdq" secondAttribute="top" constant="8" id="mFe-QQ-yUw"/>
                             <constraint firstItem="vcI-jh-pUE" firstAttribute="top" secondItem="iRM-Ub-zdq" secondAttribute="top" constant="8" id="pYW-7u-hkJ"/>
+                            <constraint firstItem="O0P-qY-9Pq" firstAttribute="centerY" secondItem="gmO-bA-lK2" secondAttribute="centerY" id="wEX-xV-yL9"/>
+                            <constraint firstItem="1dR-bS-fzy" firstAttribute="leading" secondItem="O0P-qY-9Pq" secondAttribute="trailing" constant="8" id="yoN-xk-gaa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -105,11 +113,14 @@
             <connections>
                 <outlet property="contentImageView" destination="1dR-bS-fzy" id="LQ9-BI-WEJ"/>
                 <outlet property="contentLabel" destination="iYw-ZZ-Ndd" id="f3s-0z-zES"/>
+                <outlet property="distanceLabel" destination="O0P-qY-9Pq" id="vv9-Ih-lki"/>
                 <outlet property="helpCountLabel" destination="l6y-Ur-sy9" id="dRU-to-ZZy"/>
-                <outlet property="locationLabel" destination="gmO-bA-lK2" id="hTg-e6-EtL"/>
                 <outlet property="titleLabel" destination="vcI-jh-pUE" id="Wfo-KX-K2W"/>
             </connections>
             <point key="canvasLocation" x="272" y="336"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="like" width="14" height="13"/>
+    </resources>
 </document>
