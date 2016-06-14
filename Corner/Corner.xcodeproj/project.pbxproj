@@ -29,6 +29,8 @@
 		488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */; };
 		488AE1A41D0D43D5004AA676 /* CRHelpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */; };
 		488AE1A81D0D4D52004AA676 /* CRMainTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488AE1A71D0D4D52004AA676 /* CRMainTableSectionHeader.xib */; };
+		48B3D6641D10183100D1616D /* CRCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3D6631D10183100D1616D /* CRCityViewController.swift */; };
+		48B3D6661D101D8300D1616D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3D6651D101D8300D1616D /* Constant.swift */; };
 		930DBC988E3CF328998D1AE3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EED0349D25579CF798E11 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRHelpCell.swift; sourceTree = "<group>"; };
 		488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRHelpCell.xib; sourceTree = "<group>"; };
 		488AE1A71D0D4D52004AA676 /* CRMainTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRMainTableSectionHeader.xib; sourceTree = "<group>"; };
+		48B3D6631D10183100D1616D /* CRCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRCityViewController.swift; sourceTree = "<group>"; };
+		48B3D6651D101D8300D1616D /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5775F756E344D169A34AAF6B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A85EED0349D25579CF798E11 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA99EBDA9122527261EE90B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				4844D5F41D0D05660082A84C /* Info.plist */,
 				3062F4FE1D0E8C93007C9F9F /* manifest.plist */,
 				487E63C21D0FD83700D25CCB /* Booth.storyboard */,
+				48B3D6651D101D8300D1616D /* Constant.swift */,
 			);
 			path = Corner;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				3062F5001D0EBEC9007C9F9F /* CRCategoryViewController.swift */,
 				486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */,
 				487E63C41D0FE3EC00D25CCB /* CRNewBoothViewController.swift */,
+				48B3D6631D10183100D1616D /* CRCityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -413,7 +419,9 @@
 				486BA0B91D0FBCEC007AF77A /* CRVerticalCenterButton.swift in Sources */,
 				4844D61A1D0D11100082A84C /* CRAdViewController.swift in Sources */,
 				4844D6211D0D2AD90082A84C /* CRCategoryCell.swift in Sources */,
+				48B3D6661D101D8300D1616D /* Constant.swift in Sources */,
 				4844D5EB1D0D05660082A84C /* ViewController.swift in Sources */,
+				48B3D6641D10183100D1616D /* CRCityViewController.swift in Sources */,
 				486BA0B71D0FBA3B007AF77A /* CRDetailViewController.swift in Sources */,
 				4844D5E91D0D05660082A84C /* AppDelegate.swift in Sources */,
 				4844D6181D0D0C490082A84C /* CRHotViewController.swift in Sources */,

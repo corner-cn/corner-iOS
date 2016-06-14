@@ -16,10 +16,13 @@ class CRMainViewController: UITableViewController {
     var images : [String] = []
     var titles : [String] = []
     
-    var cityButton : UIButton!
+    var cityButton : CRExchangeButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        
         let nib = UINib.init(nibName: "CRCategoryCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: r_CRCategoryCell)
         let helpCellNib = UINib.init(nibName: "CRHelpCell", bundle: nil)
@@ -34,20 +37,19 @@ class CRMainViewController: UITableViewController {
         let titleView = UIImageView(image: UIImage(named: "title"))
         self.navigationItem.titleView = titleView
         
-        cityButton = UIButton(type: .Custom)
+        cityButton = CRExchangeButton(type: .Custom)
         cityButton.setImage(UIImage(named: "indicator"), forState: .Normal)
         cityButton.setImage(UIImage(named: "indicator"), forState: .Highlighted)
         cityButton.setTitle("北京", forState: .Normal)
         cityButton.titleLabel?.font = UIFont.systemFontOfSize(16)
         cityButton.layoutIfNeeded()
         cityButton.sizeToFit()
-        let imagex = cityButton.titleLabel?.frame.width
-        let labelx = cityButton.imageView?.frame.width
-        print("\(imagex),\(labelx)")
-        cityButton.imageEdgeInsets = UIEdgeInsetsMake(0, 2 * imagex!, 0, 0)
-        cityButton.titleEdgeInsets = UIEdgeInsetsMake(0, -2 * labelx!, 0, 0)
+
+        cityButton.addTarget(self, action: #selector(changeCity), forControlEvents:.TouchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cityButton)
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(updateCity(_:)), name: nt_ChangeCity, object: nil)
     }
 
 //    // MARK: - Table view data source
@@ -65,7 +67,6 @@ class CRMainViewController: UITableViewController {
             return 2
         }
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
@@ -93,49 +94,19 @@ class CRMainViewController: UITableViewController {
     }
  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+//  MARK: - Selector & Actions
+    
+    func changeCity() {
+        self.performSegueWithIdentifier("sg_change_city", sender: self)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func updateCity(notification: NSNotification) {
+        cityButton.setTitle(g_city, forState:.Normal)
+        self.performSelector(#selector(loadData), withObject: nil, afterDelay: 2.0)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func loadData() {
+        self.refreshControl?.beginRefreshing()
+        //todo load data asynchrously
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

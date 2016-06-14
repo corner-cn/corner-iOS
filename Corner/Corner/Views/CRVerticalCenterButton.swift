@@ -34,3 +34,19 @@ class CRVerticalCenterButton: UIButton {
         
     }
 }
+
+class CRExchangeButton: UIButton {
+    
+    override func imageRectForContentRect(contentRect: CGRect) -> CGRect {
+        var frame = super.imageRectForContentRect(contentRect)
+        frame.origin.x = CGRectGetMaxX(contentRect) - CGRectGetWidth(frame) -  self.imageEdgeInsets.right + self.imageEdgeInsets.left + 3;
+        return frame;
+
+    }
+    
+    override func titleRectForContentRect(contentRect: CGRect) -> CGRect {
+        var frame = super.titleRectForContentRect(contentRect)
+        frame.origin.x = CGRectGetMinX(frame) - CGRectGetWidth(self.imageRectForContentRect(contentRect));
+        return frame;
+    }
+}
