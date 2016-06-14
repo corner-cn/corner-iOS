@@ -21,6 +21,10 @@
 		4844D6211D0D2AD90082A84C /* CRCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D61F1D0D2AD90082A84C /* CRCategoryCell.swift */; };
 		4844D6221D0D2AD90082A84C /* CRCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4844D6201D0D2AD90082A84C /* CRCategoryCell.xib */; };
 		4844D6241D0D39C70082A84C /* CRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D6231D0D39C70082A84C /* CRMainViewController.swift */; };
+		486BA0B71D0FBA3B007AF77A /* CRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */; };
+		486BA0B91D0FBCEC007AF77A /* CRVerticalCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */; };
+		487E63C31D0FD83700D25CCB /* Booth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E63C21D0FD83700D25CCB /* Booth.storyboard */; };
+		487E63C51D0FE3EC00D25CCB /* CRNewBoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E63C41D0FE3EC00D25CCB /* CRNewBoothViewController.swift */; };
 		488AE1A01D0D408C004AA676 /* CRDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488AE19F1D0D408C004AA676 /* CRDesignableView.swift */; };
 		488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */; };
 		488AE1A41D0D43D5004AA676 /* CRHelpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */; };
@@ -66,6 +70,10 @@
 		4844D61F1D0D2AD90082A84C /* CRCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRCategoryCell.swift; sourceTree = "<group>"; };
 		4844D6201D0D2AD90082A84C /* CRCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRCategoryCell.xib; sourceTree = "<group>"; };
 		4844D6231D0D39C70082A84C /* CRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMainViewController.swift; sourceTree = "<group>"; };
+		486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRDetailViewController.swift; sourceTree = "<group>"; };
+		486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRVerticalCenterButton.swift; sourceTree = "<group>"; };
+		487E63C21D0FD83700D25CCB /* Booth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booth.storyboard; sourceTree = "<group>"; };
+		487E63C41D0FE3EC00D25CCB /* CRNewBoothViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNewBoothViewController.swift; sourceTree = "<group>"; };
 		488AE19F1D0D408C004AA676 /* CRDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRDesignableView.swift; sourceTree = "<group>"; };
 		488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRHelpCell.swift; sourceTree = "<group>"; };
 		488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRHelpCell.xib; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				4844D5F11D0D05660082A84C /* LaunchScreen.storyboard */,
 				4844D5F41D0D05660082A84C /* Info.plist */,
 				3062F4FE1D0E8C93007C9F9F /* manifest.plist */,
+				487E63C21D0FD83700D25CCB /* Booth.storyboard */,
 			);
 			path = Corner;
 			sourceTree = "<group>";
@@ -173,6 +182,8 @@
 				4844D6191D0D11100082A84C /* CRAdViewController.swift */,
 				4844D6231D0D39C70082A84C /* CRMainViewController.swift */,
 				3062F5001D0EBEC9007C9F9F /* CRCategoryViewController.swift */,
+				486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */,
+				487E63C41D0FE3EC00D25CCB /* CRNewBoothViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 			children = (
 				4844D61C1D0D2A950082A84C /* Cells */,
 				488AE19F1D0D408C004AA676 /* CRDesignableView.swift */,
+				486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +289,7 @@
 				TargetAttributes = {
 					4844D5E41D0D05660082A84C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7RX632A7N8;
 					};
 					4844D5F81D0D05670082A84C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -317,6 +330,7 @@
 				3062F4FF1D0E8C93007C9F9F /* manifest.plist in Resources */,
 				4844D5F31D0D05660082A84C /* LaunchScreen.storyboard in Resources */,
 				4844D5F01D0D05660082A84C /* Assets.xcassets in Resources */,
+				487E63C31D0FD83700D25CCB /* Booth.storyboard in Resources */,
 				4844D6221D0D2AD90082A84C /* CRCategoryCell.xib in Resources */,
 				4844D5EE1D0D05660082A84C /* Main.storyboard in Resources */,
 				488AE1A81D0D4D52004AA676 /* CRMainTableSectionHeader.xib in Resources */,
@@ -395,9 +409,12 @@
 				4844D6241D0D39C70082A84C /* CRMainViewController.swift in Sources */,
 				488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */,
 				3062F5011D0EBEC9007C9F9F /* CRCategoryViewController.swift in Sources */,
+				487E63C51D0FE3EC00D25CCB /* CRNewBoothViewController.swift in Sources */,
+				486BA0B91D0FBCEC007AF77A /* CRVerticalCenterButton.swift in Sources */,
 				4844D61A1D0D11100082A84C /* CRAdViewController.swift in Sources */,
 				4844D6211D0D2AD90082A84C /* CRCategoryCell.swift in Sources */,
 				4844D5EB1D0D05660082A84C /* ViewController.swift in Sources */,
+				486BA0B71D0FBA3B007AF77A /* CRDetailViewController.swift in Sources */,
 				4844D5E91D0D05660082A84C /* AppDelegate.swift in Sources */,
 				4844D6181D0D0C490082A84C /* CRHotViewController.swift in Sources */,
 				488AE1A01D0D408C004AA676 /* CRDesignableView.swift in Sources */,
@@ -545,7 +562,7 @@
 			baseConfigurationReference = 5775F756E344D169A34AAF6B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Corner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -557,7 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ijiejiao.Corner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13a51caa-7baa-41bd-8e1a-239e2cd73c82";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -567,7 +584,7 @@
 			baseConfigurationReference = BA99EBDA9122527261EE90B0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xi'an chu'he mutual Entertainment Network Technology Co., Ltd.";
 				INFOPLIST_FILE = Corner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -580,7 +597,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ijiejiao.Corner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "13a51caa-7baa-41bd-8e1a-239e2cd73c82";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -16,6 +16,8 @@ class CRMainViewController: UITableViewController {
     var images : [String] = []
     var titles : [String] = []
     
+    var cityButton : UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib.init(nibName: "CRCategoryCell", bundle: nil)
@@ -27,6 +29,25 @@ class CRMainViewController: UITableViewController {
         titles = ["附近","小吃","杂货","手艺"]
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
+        
+        //MARK:
+        let titleView = UIImageView(image: UIImage(named: "title"))
+        self.navigationItem.titleView = titleView
+        
+        cityButton = UIButton(type: .Custom)
+        cityButton.setImage(UIImage(named: "indicator"), forState: .Normal)
+        cityButton.setImage(UIImage(named: "indicator"), forState: .Highlighted)
+        cityButton.setTitle("北京", forState: .Normal)
+        cityButton.titleLabel?.font = UIFont.systemFontOfSize(16)
+        cityButton.layoutIfNeeded()
+        cityButton.sizeToFit()
+        let imagex = cityButton.titleLabel?.frame.width
+        let labelx = cityButton.imageView?.frame.width
+        print("\(imagex),\(labelx)")
+        cityButton.imageEdgeInsets = UIEdgeInsetsMake(0, 2 * imagex!, 0, 0)
+        cityButton.titleEdgeInsets = UIEdgeInsetsMake(0, -2 * labelx!, 0, 0)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cityButton)
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
     }
 
 //    // MARK: - Table view data source
