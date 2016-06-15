@@ -12,6 +12,12 @@ class CRCategoryViewController: UITableViewController,UISearchControllerDelegate
     
     let r_CRHelpCell: String = "r_CRHelpCell"
     
+    var distance : Int! = 500
+    
+    var category : Int! = 0
+    
+    var sort: Int! = 0
+    
     var searchController : UISearchController!
 
     @IBOutlet var filterButtons: [UIButton]!
@@ -74,8 +80,13 @@ class CRCategoryViewController: UITableViewController,UISearchControllerDelegate
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let helpCell = tableView.dequeueReusableCellWithIdentifier(r_CRHelpCell, forIndexPath: indexPath) as! CRHelpCell
-        helpCell.updateContent()
+        helpCell.updateContent(nil)
         return helpCell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("sg_category_detail", sender: self)
     }
     
     @IBAction func filterNearby(sender: AnyObject) {

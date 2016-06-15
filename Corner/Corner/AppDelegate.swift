@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -23,14 +24,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-        locationManager.requestAlwaysAuthorization()
-//        locationManager.requestLocation()
+        locationManager.requestWhenInUseAuthorization()
+//        Service.recommend(nil)
+//        let file1 = NSBundle.mainBundle().pathForResource("a", ofType: "png")
+//        let file2 = NSBundle.mainBundle().pathForResource("b", ofType: "png")
+//        NSOperationQueue().addOperationWithBlock({
+//            Alamofire.upload(
+//                .POST,
+//                "http://api.ijiejiao.cn/v1/image/",
+//                multipartFormData: { multipartFormData in
+//                    multipartFormData.appendBodyPart(fileURL: NSURL.fileURLWithPath(file1!), name: "unicorn")
+//                    multipartFormData.appendBodyPart(fileURL: NSURL.fileURLWithPath(file2!), name: "rainbow")
+//                    multipartFormData.appendBodyPart(data: "3234".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!, name: "bid", mimeType: "text")
+//                },
+//                encodingCompletion: { encodingResult in
+//                    switch encodingResult {
+//                    case .Success(let upload, _, _):
+//                        upload.responseJSON { response in
+//                            debugPrint(response)
+//                        }
+//                    case .Failure(let encodingError):
+//                        print(encodingError)
+//                    }
+//                }
+//            )
+//        })
         return true
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last
-        print("latitude:\(location?.coordinate.latitude) longitude:\(location?.coordinate.longitude)")
+        g_location = locations.last
+        print("latitude:\(g_location?.coordinate.latitude) longitude:\(g_location?.coordinate.longitude)")
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

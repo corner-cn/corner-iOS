@@ -54,18 +54,25 @@ transitionCompleted completed: Bool) {
     }
     
     func loadad() {
-        for _ in 0...2 {
-            if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CR-AD-1") {
-                ads.addObject(vc)
+        Service.recommend { booths in
+            if booths != nil && booths!.count > 0 {
+                for booth in booths! {
+                    if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CR-AD-1") as? CRAdViewController {
+                        vc.booth = booth
+                        self.ads.addObject(vc)
+                        self.setViewControllers([self.ads[0] as! UIViewController], direction: .Forward, animated: true, completion: nil)
+                        self.pc.numberOfPages = (booths?.count)!
+                        self.pc.currentPage = 0
+                    }
+                }
             }
         }
-        self.setViewControllers([ads[0] as! UIViewController], direction: .Forward, animated: true, completion: nil)
     }
     
     func initliaze() {
         pc = UIPageControl()
         pc.currentPage = 0
-        pc.numberOfPages = 3
+        pc.numberOfPages = 0
         pc.currentPageIndicatorTintColor = UIColor(red: 65.0/255, green: 193.0/255, blue: 176.0/255, alpha: 1.0)
         pc.layer.zPosition = 999
         pc.translatesAutoresizingMaskIntoConstraints = false

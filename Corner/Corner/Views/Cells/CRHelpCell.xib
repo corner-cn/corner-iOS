@@ -10,13 +10,13 @@
             <rect key="frame" x="0.0" y="0.0" width="410" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="410" height="147.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="410" height="148"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRM-Ub-zdq">
                         <rect key="frame" x="0.0" y="0.0" width="410" height="133"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bS-fzy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plcaeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bS-fzy">
                                 <rect key="frame" x="221" y="8" width="181" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="xlr-l3-k6p"/>
@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-qY-9Pq">
-                                <rect key="frame" x="192" y="111.5" width="21" height="12"/>
+                                <rect key="frame" x="192" y="112" width="21" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -115,6 +115,7 @@
                 <outlet property="contentLabel" destination="iYw-ZZ-Ndd" id="f3s-0z-zES"/>
                 <outlet property="distanceLabel" destination="O0P-qY-9Pq" id="vv9-Ih-lki"/>
                 <outlet property="helpCountLabel" destination="l6y-Ur-sy9" id="dRU-to-ZZy"/>
+                <outlet property="locationLabel" destination="gmO-bA-lK2" id="1MS-mc-dx8"/>
                 <outlet property="titleLabel" destination="vcI-jh-pUE" id="Wfo-KX-K2W"/>
             </connections>
             <point key="canvasLocation" x="272" y="336"/>
@@ -122,5 +123,6 @@
     </objects>
     <resources>
         <image name="like" width="14" height="13"/>
+        <image name="plcaeholder" width="200" height="151"/>
     </resources>
 </document>

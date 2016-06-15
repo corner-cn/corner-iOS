@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class CRDesignableView: UIView {
+class CRDesignableView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
         get {
@@ -22,7 +22,20 @@ import UIKit
 }
 
 
-@IBDesignable class CRDesignableLabel: UILabel {
+class CRDesignableLabel: UILabel {
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
+
+class CRDesignableButton: UIButton {
     
     @IBInspectable var cornerRadius: CGFloat {
         get {

@@ -16,22 +16,20 @@ class CRAdViewController: UIViewController {
     
     @IBOutlet weak var adTitle: UILabel!
     
+    var booth: CRBooth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadAd()
-        // Do any additional setup after loading the view.
+        loadAd(booth)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func loadAd() -> Void {
-        let imageURL = NSURL.init(string: "http://i1.hexunimg.cn/2013-09-08/157829171.jpg")
-        self.adImageView.sd_setImageWithURL(imageURL)
-        self.adTitle.text = "AppAnnie@sanlitun"
+    func loadAd(booth: CRBooth?){
+        if let b = booth {
+            if b.images != nil && b.images?.count > 0 {
+                self.adImageView.sd_setImageWithURL(NSURL(string: (b.images?.first)!), placeholderImage: UIImage(named: g_placeholer))
+            }
+            self.adTitle.text = b.boothName
+        }
     }
     
     /*
@@ -43,5 +41,4 @@ class CRAdViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

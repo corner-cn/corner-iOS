@@ -10,12 +10,12 @@
             <objects>
                 <tableViewController id="6It-UP-8dd" customClass="CRCityViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ju2-pl-6X9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="r_CityCell" rowHeight="60" id="1vz-Ze-wLN" customClass="CRCityCell" customModule="Corner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1vz-Ze-wLN" id="Ozg-8k-UhL">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
@@ -83,23 +83,128 @@
                 <viewControllerPlaceholder storyboardName="Booth" referencedIdentifier="Booth-01" id="Aqx-Eg-9dI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWN-mH-UBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405" y="-224"/>
+            <point key="canvasLocation" x="1481" y="-293"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="GsZ-gB-JoC">
             <objects>
                 <tableViewController id="t92-C7-nbt" customClass="CRMainViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="n97-UV-m5G">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="n97-UV-m5G">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
-                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="Ohb-Sg-p6A">
-                            <rect key="frame" x="0.0" y="64" width="600" height="200"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <connections>
-                                <segue destination="dCD-Yi-fMx" kind="embed" id="ZSv-8q-yY9"/>
-                            </connections>
-                        </containerView>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="1RY-6D-15b">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHs-Eh-dsH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="GNa-Ay-jiz"/>
+                                    </constraints>
+                                    <connections>
+                                        <segue destination="dCD-Yi-fMx" kind="embed" id="dNS-Vr-89d"/>
+                                    </connections>
+                                </containerView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-0e-lMS">
+                                    <rect key="frame" x="8" y="216" width="584" height="188"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="30w-h1-zEV">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="188"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMu-we-tsc" customClass="CRDesignableButton" customModule="Corner" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="90"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Button" backgroundImage="c-nearby">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="toCategoryPage:" destination="t92-C7-nbt" eventType="touchUpInside" id="4Ua-4g-JLP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qam-fH-6L8" customClass="CRDesignableButton" customModule="Corner" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="98" width="288" height="90"/>
+                                                    <state key="normal" title="Button" backgroundImage="c-zahuo">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="toCategoryPage:" destination="t92-C7-nbt" eventType="touchUpInside" id="FUf-VG-J22"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uao-jL-oVY">
+                                            <rect key="frame" x="296" y="0.0" width="288" height="188"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkJ-rr-v4e" customClass="CRDesignableButton" customModule="Corner" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="90"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Button" backgroundImage="c-xiaochi">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="toCategoryPage:" destination="t92-C7-nbt" eventType="touchUpInside" id="cz8-0I-yEz"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-tg-wQE" customClass="CRDesignableButton" customModule="Corner" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="98" width="288" height="90"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Button" backgroundImage="c-shouyi">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="toCategoryPage:" destination="t92-C7-nbt" eventType="touchUpInside" id="CKo-gi-gcp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="188" id="gY6-Uf-CK3"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="SHs-Eh-dsH" firstAttribute="top" secondItem="1RY-6D-15b" secondAttribute="top" id="VYM-ov-2qE"/>
+                                <constraint firstItem="8x2-0e-lMS" firstAttribute="top" secondItem="SHs-Eh-dsH" secondAttribute="bottom" constant="16" id="Vb3-In-Unw"/>
+                                <constraint firstItem="8x2-0e-lMS" firstAttribute="leading" secondItem="1RY-6D-15b" secondAttribute="leading" constant="8" id="WDa-1W-Fyn"/>
+                                <constraint firstAttribute="trailing" secondItem="SHs-Eh-dsH" secondAttribute="trailing" id="aUV-PX-npS"/>
+                                <constraint firstAttribute="trailing" secondItem="8x2-0e-lMS" secondAttribute="trailing" constant="8" id="evK-fn-dxh"/>
+                                <constraint firstItem="SHs-Eh-dsH" firstAttribute="leading" secondItem="1RY-6D-15b" secondAttribute="leading" id="oxQ-BN-0NQ"/>
+                                <constraint firstAttribute="bottom" secondItem="8x2-0e-lMS" secondAttribute="bottom" constant="16" id="zed-19-tSi"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MxJ-1a-QrM">
+                                <rect key="frame" x="0.0" y="448" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MxJ-1a-QrM" id="xYD-5S-pC2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="t92-C7-nbt" id="MAq-tj-lBF"/>
                             <outlet property="delegate" destination="t92-C7-nbt" id="pj0-zI-7aK"/>
@@ -109,12 +214,18 @@
                         <barButtonItem key="rightBarButtonItem" image="new" id="WRJ-u9-Zek">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="dCf-FM-w9H" kind="show" id="2I4-Sh-WC8"/>
+                                <segue destination="Aqx-Eg-9dI" kind="show" id="bVk-Od-uBY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outletCollection property="categoryButtons" destination="jMu-we-tsc" collectionClass="NSMutableArray" id="wgy-t5-aLj"/>
+                        <outletCollection property="categoryButtons" destination="LkJ-rr-v4e" collectionClass="NSMutableArray" id="xt7-u6-QE9"/>
+                        <outletCollection property="categoryButtons" destination="qam-fH-6L8" collectionClass="NSMutableArray" id="CWn-Bs-hsq"/>
+                        <outletCollection property="categoryButtons" destination="B9p-tg-wQE" collectionClass="NSMutableArray" id="d7d-wd-FJD"/>
                         <segue destination="6It-UP-8dd" kind="show" identifier="sg_change_city" id="IcO-Mx-u6a"/>
+                        <segue destination="dCf-FM-w9H" kind="show" identifier="sg_category" id="Oee-nz-bpy"/>
+                        <segue destination="8qc-lx-0wk" kind="presentation" identifier="sg_main_detail" id="wVT-tm-MkB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xo-S9-Z8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,25 +237,26 @@
             <objects>
                 <tableViewController id="dCf-FM-w9H" customClass="CRCategoryViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BqX-Xy-Oy0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="w8Y-E7-5lQ">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KKI-Yj-QtE">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-Dr-HxO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dE8-XP-9iI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvM-zu-BBZ" customClass="CRExchangeButton" customModule="Corner" customModuleProvider="target">
-                                                            <rect key="frame" x="74" y="11" width="52" height="22"/>
+                                                            <rect key="frame" x="76" y="10" width="48" height="20"/>
                                                             <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <state key="normal" title="附近" image="indicator-green">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -152,7 +264,7 @@
                                                                 <action selector="filterNearby:" destination="dCf-FM-w9H" eventType="touchUpInside" id="Wbj-tX-7Ov"/>
                                                             </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-x8-XGa">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-x8-XGa">
                                                             <rect key="frame" x="199" y="5" width="1" height="34"/>
                                                             <color key="backgroundColor" red="0.25490196079999999" green="0.75686274509999996" blue="0.69019607839999997" alpha="0.14000000000000001" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -170,11 +282,12 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpP-Ld-Vgf">
-                                                    <rect key="frame" x="200" y="0.0" width="200" height="44"/>
+                                                    <rect key="frame" x="200" y="0.0" width="200" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaM-yS-1f6" customClass="CRExchangeButton" customModule="Corner" customModuleProvider="target">
-                                                            <rect key="frame" x="56" y="11" width="88" height="22"/>
+                                                            <rect key="frame" x="60" y="10" width="80" height="20"/>
                                                             <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <state key="normal" title="全部类别" image="indicator-green">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -182,7 +295,7 @@
                                                                 <action selector="filterCategory:" destination="dCf-FM-w9H" eventType="touchUpInside" id="WxJ-aO-LIP"/>
                                                             </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-lv-bRe">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTz-lv-bRe">
                                                             <rect key="frame" x="199" y="5" width="1" height="34"/>
                                                             <color key="backgroundColor" red="0.25490196078431371" green="0.75686274509803919" blue="0.69019607843137254" alpha="0.14000000000000001" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -200,17 +313,17 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7W-WZ-fbz">
-                                                    <rect key="frame" x="400" y="0.0" width="200" height="44"/>
+                                                    <rect key="frame" x="400" y="0.0" width="200" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqu-hq-nJP" customClass="CRExchangeButton" customModule="Corner" customModuleProvider="target">
-                                                            <rect key="frame" x="56" y="11" width="88" height="22"/>
+                                                            <rect key="frame" x="60" y="10" width="80" height="20"/>
                                                             <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <state key="normal" title="急需帮助" image="indicator-green">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="filterHot:" destination="dCf-FM-w9H" eventType="touchUpInside" id="3fL-c9-Qdk"/>
-                                                                <segue destination="8qc-lx-0wk" kind="presentation" id="r4n-rX-xdP"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -237,7 +350,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="H5y-qo-noI">
-                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="68" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5y-qo-noI" id="StS-EH-gAK">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -261,11 +374,12 @@
                     <connections>
                         <outletCollection property="filterButtons" destination="qvM-zu-BBZ" collectionClass="NSMutableArray" id="7Bz-Bh-z3l"/>
                         <outletCollection property="filterButtons" destination="AaM-yS-1f6" collectionClass="NSMutableArray" id="sJM-hd-JKy"/>
+                        <segue destination="8qc-lx-0wk" kind="presentation" identifier="sg_category_detail" id="AJ3-8Y-c8L"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzg-uS-9Dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="940"/>
+            <point key="canvasLocation" x="955" y="932"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="lU0-yj-SI5">
@@ -423,8 +537,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-SI-ZWd" customClass="CRDesignableView" customModule="Corner" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="470" width="584" height="271"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-SI-ZWd" customClass="CRDesignableView" customModule="Corner" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="471" width="584" height="114"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTk-wa-mVx">
                                                 <rect key="frame" x="8" y="8" width="568" height="98"/>
@@ -486,9 +600,13 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb8-ux-rSK" customClass="CRVerticalCenterButton" customModule="Corner" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="199" height="60"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="附近" image="like">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <state key="normal" title="签到" image="like">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="checkin:" destination="8qc-lx-0wk" eventType="touchUpInside" id="8lB-zl-HPF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -506,9 +624,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssl-p2-8Gm">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-4g-NmG" customClass="CRVerticalCenterButton" customModule="Corner" customModuleProvider="target">
-                                                        <rect key="frame" x="72" y="19" width="55" height="22"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-4g-NmG" customClass="CRVerticalCenterButton" customModule="Corner" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="199" height="60"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="分享" image="share">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -533,6 +652,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0r-KI-Vip" customClass="CRVerticalCenterButton" customModule="Corner" customModuleProvider="target">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="60"/>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="报错" image="report">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -555,7 +675,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO5-bc-zOs">
-                                <rect key="frame" x="12" y="58" width="32" height="32"/>
+                                <rect key="frame" x="8" y="30" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="8Iq-Dy-OJ8"/>
                                     <constraint firstAttribute="height" constant="32" id="wka-hd-VBi"/>
@@ -568,14 +688,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lO5-bc-zOs" firstAttribute="leading" secondItem="wpk-U5-Eoo" secondAttribute="leadingMargin" constant="-8" id="1VL-b8-3FW"/>
                             <constraint firstItem="Bxs-iW-r1X" firstAttribute="leading" secondItem="wpk-U5-Eoo" secondAttribute="leading" id="3BL-ve-e2W"/>
                             <constraint firstItem="Bxs-iW-r1X" firstAttribute="top" secondItem="wpk-U5-Eoo" secondAttribute="top" id="67g-J4-n9z"/>
-                            <constraint firstItem="lO5-bc-zOs" firstAttribute="top" secondItem="MIY-c9-JCT" secondAttribute="bottom" constant="38" id="Hdf-mN-DaM"/>
                             <constraint firstItem="9r5-sw-bZi" firstAttribute="top" secondItem="L8a-Ib-hyZ" secondAttribute="bottom" id="XB4-w8-7Nl"/>
                             <constraint firstAttribute="trailing" secondItem="Bxs-iW-r1X" secondAttribute="trailing" id="Xam-u6-MUy"/>
                             <constraint firstItem="lO5-bc-zOs" firstAttribute="leading" secondItem="wpk-U5-Eoo" secondAttribute="leadingMargin" constant="-8" id="YlH-Hy-0mm"/>
                             <constraint firstItem="L8a-Ib-hyZ" firstAttribute="leading" secondItem="wpk-U5-Eoo" secondAttribute="leading" id="aEt-wd-rRL"/>
+                            <constraint firstItem="lO5-bc-zOs" firstAttribute="top" secondItem="MIY-c9-JCT" secondAttribute="bottom" constant="10" id="bsk-6e-7wS"/>
+                            <constraint firstItem="lO5-bc-zOs" firstAttribute="leading" secondItem="wpk-U5-Eoo" secondAttribute="leading" constant="8" id="jqd-WN-Fok"/>
                             <constraint firstItem="L8a-Ib-hyZ" firstAttribute="top" secondItem="Bxs-iW-r1X" secondAttribute="bottom" id="l5V-id-cmY"/>
                             <constraint firstAttribute="trailing" secondItem="L8a-Ib-hyZ" secondAttribute="trailing" id="qnM-Ws-rwF"/>
                         </constraints>
@@ -589,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPC-8S-gJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="940"/>
+            <point key="canvasLocation" x="1750" y="932"/>
         </scene>
         <!--Hot View Controller-->
         <scene sceneID="VQI-Ro-PQB">
@@ -597,7 +717,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="A10-51-Uqh" customClass="CRHotViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8T-EK-US7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476" y="802"/>
+            <point key="canvasLocation" x="2480" y="780"/>
         </scene>
         <!--Hot View Controller-->
         <scene sceneID="cb5-UQ-bqr">
@@ -611,7 +731,7 @@
         <scene sceneID="rxC-qt-nCP">
             <objects>
                 <navigationController id="5v1-WD-nt0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iN-25-Os8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2iN-25-Os8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -672,6 +792,10 @@
     </scenes>
     <resources>
         <image name="back-button" width="9" height="16"/>
+        <image name="c-nearby" width="195" height="90"/>
+        <image name="c-shouyi" width="195" height="90"/>
+        <image name="c-xiaochi" width="195" height="90"/>
+        <image name="c-zahuo" width="195" height="90"/>
         <image name="close" width="16" height="17"/>
         <image name="indicator-green" width="16" height="9"/>
         <image name="like" width="14" height="13"/>
@@ -681,4 +805,7 @@
         <image name="share" width="19" height="15"/>
         <image name="time" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AJ3-8Y-c8L"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,31 +7,40 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CRMainViewController: UITableViewController {
 
-    let r_CRCategoryCell: String = "r_CRCategoryCell"
     let r_CRHelpCell: String = "r_CRHelpCell"
     
-    var images : [String] = []
-    var titles : [String] = []
+    @IBOutlet var categoryButtons: [CRDesignableButton]!
     
-    var cityButton : CRExchangeButton!
+    var categoryIndex: Int! = 0
+    
+    var titles: [String] = []
+    
+    var booths: [CRBooth]? = []
+    
+    var cityButton: CRExchangeButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
         
-        let nib = UINib.init(nibName: "CRCategoryCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: r_CRCategoryCell)
-        let helpCellNib = UINib.init(nibName: "CRHelpCell", bundle: nil)
-        self.tableView.registerNib(helpCellNib, forCellReuseIdentifier: r_CRHelpCell)
-        let url = "http://cdn.images.express.co.uk/img/dynamic/11/590x/Food-health-603127.jpg"
-        images = [url, url, url, url]
-        titles = ["附近","小吃","杂货","手艺"]
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
+        
+        let helpCellNib = UINib.init(nibName: "CRHelpCell", bundle: nil)
+        self.tableView.registerNib(helpCellNib, forCellReuseIdentifier: r_CRHelpCell)
+        
+        titles = ["附近","小吃","杂货","手艺"]
+        for i in 0...titles.count - 1 {
+            let button = categoryButtons[i]
+            let title = titles[i]
+            button.setTitle(title, forState: .Normal)
+        }
         
         //MARK:
         let titleView = UIImageView(image: UIImage(named: "title"))
@@ -50,51 +59,59 @@ class CRMainViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(updateCity(_:)), name: nt_ChangeCity, object: nil)
+        
+        self.refresh()
+        
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let refreshing = self.refreshControl?.refreshing {
+            if refreshing {
+                self.refreshControl?.endRefreshing()
+            }
+        }
     }
 
 //    // MARK: - Table view data source
-//
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: update
-        if section == 0 {
-            return 1
+        if let c = booths?.count {
+            return c
         } else {
-            return 2
+            return 0
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let categoryCell = tableView.dequeueReusableCellWithIdentifier(r_CRCategoryCell, forIndexPath: indexPath) as! CRCategoryCell
-            categoryCell.updateContent(images, titleNames: titles)
-            return categoryCell
-        } else {
-            let helpCell = tableView.dequeueReusableCellWithIdentifier(r_CRHelpCell, forIndexPath: indexPath) as! CRHelpCell
-            helpCell.updateContent()
-            return helpCell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(r_CRHelpCell, forIndexPath: indexPath) as! CRHelpCell
+        cell.updateContent(booths?[indexPath.row])
+        return cell
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return nil
-        } else {
-            let v = NSBundle.mainBundle().loadNibNamed("CRMainTableSectionHeader", owner: nil, options: nil).first as! UIView
-            return v
-        }
+       return NSBundle.mainBundle().loadNibNamed("CRMainTableSectionHeader", owner: nil, options: nil).first as? UIView
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 44.0
+        return 44.0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("sg_main_detail", sender:self)
     }
  
 
 //  MARK: - Selector & Actions
+    
+    @IBAction func toCategoryPage(sender: CRDesignableButton) {
+        if let index = categoryButtons.indexOf(sender) {
+            categoryIndex = index
+            self.performSegueWithIdentifier("sg_category", sender: self)
+        }
+    }
+    
     
     func changeCity() {
         self.performSegueWithIdentifier("sg_change_city", sender: self)
@@ -102,11 +119,31 @@ class CRMainViewController: UITableViewController {
     
     func updateCity(notification: NSNotification) {
         cityButton.setTitle(g_city, forState:.Normal)
-        self.performSelector(#selector(loadData), withObject: nil, afterDelay: 2.0)
+        self.refresh()
+    }
+    
+    func refresh() {
+        self.tableView.setContentOffset(CGPointMake(0, -(self.refreshControl?.frame.height)!), animated: true)
+        self.refreshControl?.beginRefreshing()
+        self.refreshControl?.sendActionsForControlEvents(.ValueChanged)
     }
     
     func loadData() {
-        self.refreshControl?.beginRefreshing()
-        //todo load data asynchrously
+        Service.priority { booths in
+            if booths != nil && booths!.count > 0 {
+                self.booths = booths
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "sg_category" {
+            let c = segue.destinationViewController as! CRCategoryViewController
+            c.category = categoryIndex
+        } else if segue.identifier == "sg_main_category" {
+            let c = segue.destinationViewController as! CRDetailViewController
+            c.boothID = 1
+        }
     }
 }

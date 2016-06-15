@@ -27,7 +27,20 @@ class CRHelpCell: UITableViewCell {
         // Initialization code
     }
     
-    func updateContent() {
-        self.contentImageView.sd_setImageWithURL(NSURL.init(string: "http://codingstuff.org/wp-content/uploads/2014/08/Hackathon_TLV_2013_-_48.jpg"))
+    func updateContent(booth: CRBooth?) {
+        self.titleLabel.text = booth?.boothName
+        self.contentLabel.text = booth?.boothStory
+            self.locationLabel.text = booth?.location
+        if let likeCnt = booth?.likeCount {
+            self.helpCountLabel.text = "\(likeCnt)"
+        } else {
+            self.helpCountLabel.text = "0"
+        }
+        if let thumb = booth?.thumnail {
+            self.contentImageView.sd_setImageWithURL(NSURL(string:thumb), placeholderImage: UIImage(named: g_placeholer))
+        } else {
+            self.contentImageView.image = UIImage(named: g_placeholer)
+        }
+        self.distanceLabel.text = booth?.distance
     }
 }
