@@ -8,18 +8,28 @@
 
 import UIKit
 import MBProgressHUD
+import SDWebImage
 
 class CRDetailViewController: UIViewController {
     
-    var boothID: Int?
-
+    var booth: CRBooth?
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var helpLabel: UILabel!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var storyTitleLabel: UILabel!
+    
+    @IBOutlet weak var storyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.updateUI(self.booth)
+        self.loadBoothDetail(boothId: booth?.boothId!)
     }
     
     @IBAction func back(sender: AnyObject) {
@@ -36,7 +46,47 @@ class CRDetailViewController: UIViewController {
         hud.hide(true, afterDelay: 1.5)
     }
     
-
+    @IBAction func share(sender: AnyObject) {
+        if self.booth != nil {
+            SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: (booth?.thumnail!)!), options:SDWebImageDownloaderOptions(), progress: nil) {
+                image, data, error, r in
+                let url = NSURL(string: "http://ijiejiao.cn")
+                dispatch_async(dispatch_get_main_queue(), {
+                    let shareViewController = UIActivityViewController(activityItems:[(self.booth?.boothName)!, image, url!], applicationActivities: nil)
+                    self.presentViewController(shareViewController, animated: true, completion: nil)
+                    shareViewController.completionWithItemsHandler = {(activetype: String?, r:Bool,items:[AnyObject]?, error: NSError?) -> Void in
+                        shareViewController.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                })
+            }
+        }
+    }
+    
+    
+    func loadBoothDetail(boothId id: String?) {
+        if id != nil {
+            let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            hud.labelText = "加载摊铺信息..."
+            Service.boothDetail(boothId: id!) {
+                booth in
+                hud.hide(true)
+                self.booth = booth
+                self.updateUI(self.booth)
+            }
+        }
+    }
+    
+    func updateUI(booth: CRBooth?) {
+        if booth != nil {
+            self.titleLabel.text = booth?.boothName
+            self.helpLabel.text = booth?.likeStr
+            self.locationLabel.text = booth?.location
+            self.timeLabel.text = booth?.openTime
+            self.storyTitleLabel.text = booth?.boothOwner
+            self.storyLabel.text = booth?.boothStory
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

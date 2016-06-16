@@ -99,7 +99,8 @@ class CRMainViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("sg_main_detail", sender:self)
+        let booth = self.booths![indexPath.row]
+        self.performSegueWithIdentifier("sg_main_detail", sender:booth)
     }
  
 
@@ -111,7 +112,6 @@ class CRMainViewController: UITableViewController {
             self.performSegueWithIdentifier("sg_category", sender: self)
         }
     }
-    
     
     func changeCity() {
         self.performSegueWithIdentifier("sg_change_city", sender: self)
@@ -130,6 +130,7 @@ class CRMainViewController: UITableViewController {
     
     func loadData() {
         Service.priority { booths in
+            self.refreshControl?.endRefreshing()
             if booths != nil && booths!.count > 0 {
                 self.booths = booths
                 self.tableView.reloadData()
@@ -139,11 +140,12 @@ class CRMainViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "sg_category" {
-            let c = segue.destinationViewController as! CRCategoryViewController
-            c.category = categoryIndex
-        } else if segue.identifier == "sg_main_category" {
+//            let c = segue.destinationViewController as! CRCategoryViewController
+//            c.category = categoryIndex
+        } else if segue.identifier == "sg_main_detail" {
             let c = segue.destinationViewController as! CRDetailViewController
-            c.boothID = 1
+            let booth = sender as! CRBooth
+            c.booth = booth
         }
     }
 }

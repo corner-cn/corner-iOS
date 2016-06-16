@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRM-Ub-zdq">
                         <rect key="frame" x="0.0" y="0.0" width="410" height="133"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plcaeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bS-fzy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bS-fzy">
                                 <rect key="frame" x="221" y="8" width="181" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="xlr-l3-k6p"/>
@@ -26,7 +26,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AppAnnie Hackson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-jh-pUE">
                                 <rect key="frame" x="8" y="8" width="205" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="APPANNIE 黑客送将于20160618举行，届时欢饮各位前来，爱啦啦啦啦啦啦啦，哈哈哈哈哈哈哈哈哈h" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYw-ZZ-Ndd">
@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="15" id="NGC-99-23w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-qY-9Pq">
@@ -123,6 +123,6 @@
     </objects>
     <resources>
         <image name="like" width="14" height="13"/>
-        <image name="plcaeholder" width="200" height="151"/>
+        <image name="placeholder" width="200" height="151"/>
     </resources>
 </document>

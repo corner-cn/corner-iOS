@@ -19,6 +19,9 @@
 		4844D6181D0D0C490082A84C /* CRHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D6171D0D0C490082A84C /* CRHotViewController.swift */; };
 		4844D61A1D0D11100082A84C /* CRAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D6191D0D11100082A84C /* CRAdViewController.swift */; };
 		4844D6241D0D39C70082A84C /* CRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4844D6231D0D39C70082A84C /* CRMainViewController.swift */; };
+		485EEEB11D129ECF00B5264F /* CRCategoryTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485EEEB01D129ECF00B5264F /* CRCategoryTableSectionHeader.xib */; };
+		485EEEB31D12A79400B5264F /* CRFilterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485EEEB21D12A79400B5264F /* CRFilterPickerView.swift */; };
+		485EEEB51D12A7FF00B5264F /* CRFilterPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485EEEB41D12A7FF00B5264F /* CRFilterPickerView.xib */; };
 		486BA0B71D0FBA3B007AF77A /* CRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */; };
 		486BA0B91D0FBCEC007AF77A /* CRVerticalCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */; };
 		487E63C31D0FD83700D25CCB /* Booth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487E63C21D0FD83700D25CCB /* Booth.storyboard */; };
@@ -27,8 +30,6 @@
 		4889D6C81D1161B800D61E01 /* CRBooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889D6C71D1161B800D61E01 /* CRBooth.swift */; };
 		4889D6CA1D11632C00D61E01 /* api in Resources */ = {isa = PBXBuildFile; fileRef = 4889D6C91D11632C00D61E01 /* api */; };
 		4889D6CC1D11670000D61E01 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889D6CB1D11670000D61E01 /* Service.swift */; };
-		4889D6CF1D11712200D61E01 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 4889D6CD1D11712200D61E01 /* a.png */; };
-		4889D6D01D11712200D61E01 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 4889D6CE1D11712200D61E01 /* b.png */; };
 		488AE1A01D0D408C004AA676 /* CRDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488AE19F1D0D408C004AA676 /* CRDesignableView.swift */; };
 		488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */; };
 		488AE1A41D0D43D5004AA676 /* CRHelpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */; };
@@ -74,6 +75,9 @@
 		4844D6171D0D0C490082A84C /* CRHotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRHotViewController.swift; sourceTree = "<group>"; };
 		4844D6191D0D11100082A84C /* CRAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRAdViewController.swift; sourceTree = "<group>"; };
 		4844D6231D0D39C70082A84C /* CRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMainViewController.swift; sourceTree = "<group>"; };
+		485EEEB01D129ECF00B5264F /* CRCategoryTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRCategoryTableSectionHeader.xib; sourceTree = "<group>"; };
+		485EEEB21D12A79400B5264F /* CRFilterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRFilterPickerView.swift; sourceTree = "<group>"; };
+		485EEEB41D12A7FF00B5264F /* CRFilterPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRFilterPickerView.xib; sourceTree = "<group>"; };
 		486BA0B61D0FBA3B007AF77A /* CRDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRDetailViewController.swift; sourceTree = "<group>"; };
 		486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRVerticalCenterButton.swift; sourceTree = "<group>"; };
 		487E63C21D0FD83700D25CCB /* Booth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Booth.storyboard; sourceTree = "<group>"; };
@@ -82,8 +86,6 @@
 		4889D6C71D1161B800D61E01 /* CRBooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRBooth.swift; sourceTree = "<group>"; };
 		4889D6C91D11632C00D61E01 /* api */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = api; sourceTree = "<group>"; };
 		4889D6CB1D11670000D61E01 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		4889D6CD1D11712200D61E01 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
-		4889D6CE1D11712200D61E01 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 		488AE19F1D0D408C004AA676 /* CRDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRDesignableView.swift; sourceTree = "<group>"; };
 		488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRHelpCell.swift; sourceTree = "<group>"; };
 		488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRHelpCell.xib; sourceTree = "<group>"; };
@@ -155,8 +157,6 @@
 		4844D5E71D0D05660082A84C /* Corner */ = {
 			isa = PBXGroup;
 			children = (
-				4889D6CD1D11712200D61E01 /* a.png */,
-				4889D6CE1D11712200D61E01 /* b.png */,
 				4889D6C61D11619B00D61E01 /* Model */,
 				4844D61B1D0D2A820082A84C /* Views */,
 				4844D6161D0D0C150082A84C /* Controllers */,
@@ -214,6 +214,9 @@
 				4844D61C1D0D2A950082A84C /* Cells */,
 				488AE19F1D0D408C004AA676 /* CRDesignableView.swift */,
 				486BA0B81D0FBCEC007AF77A /* CRVerticalCenterButton.swift */,
+				485EEEB01D129ECF00B5264F /* CRCategoryTableSectionHeader.xib */,
+				485EEEB21D12A79400B5264F /* CRFilterPickerView.swift */,
+				485EEEB41D12A7FF00B5264F /* CRFilterPickerView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,16 +355,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4889D6CF1D11712200D61E01 /* a.png in Resources */,
 				488AE1A41D0D43D5004AA676 /* CRHelpCell.xib in Resources */,
-				4889D6D01D11712200D61E01 /* b.png in Resources */,
 				3062F4FF1D0E8C93007C9F9F /* manifest.plist in Resources */,
 				4844D5F31D0D05660082A84C /* LaunchScreen.storyboard in Resources */,
 				4844D5F01D0D05660082A84C /* Assets.xcassets in Resources */,
 				487E63C31D0FD83700D25CCB /* Booth.storyboard in Resources */,
 				4889D6CA1D11632C00D61E01 /* api in Resources */,
+				485EEEB11D129ECF00B5264F /* CRCategoryTableSectionHeader.xib in Resources */,
 				4844D5EE1D0D05660082A84C /* Main.storyboard in Resources */,
 				488AE1A81D0D4D52004AA676 /* CRMainTableSectionHeader.xib in Resources */,
+				485EEEB51D12A7FF00B5264F /* CRFilterPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485EEEB31D12A79400B5264F /* CRFilterPickerView.swift in Sources */,
 				4844D6241D0D39C70082A84C /* CRMainViewController.swift in Sources */,
 				488AE1A31D0D43D5004AA676 /* CRHelpCell.swift in Sources */,
 				3062F5011D0EBEC9007C9F9F /* CRCategoryViewController.swift in Sources */,

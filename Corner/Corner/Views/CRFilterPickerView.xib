@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CRCategoryViewController" customModule="Corner" customModuleProvider="target">
+            <connections>
+                <outlet property="pickView" destination="iN0-l3-epB" id="qkO-rl-4fa"/>
+                <outletCollection property="filterButtons" destination="FRo-3B-Ki8" collectionClass="NSMutableArray" id="sv8-9S-Psx"/>
+                <outletCollection property="filterButtons" destination="4Ac-wY-GiX" collectionClass="NSMutableArray" id="Vld-Zr-0iE"/>
+                <outletCollection property="filterButtons" destination="kJK-0X-hrz" collectionClass="NSMutableArray" id="wCF-P5-YxP"/>
+                <outletCollection property="filterButtons" destination="GPz-pY-2IH" collectionClass="NSMutableArray" id="hCw-n6-Z61"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CRFilterPickerView" customModule="Corner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-Lb-6dA">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrY-ZL-IgI">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-UY-y4F" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="584" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRo-3B-Ki8">
+                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="6CA-6V-HGL"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="FRo-3B-Ki8" firstAttribute="centerX" secondItem="IGQ-UY-y4F" secondAttribute="centerX" id="RqJ-UX-ipB"/>
+                                        <constraint firstItem="FRo-3B-Ki8" firstAttribute="centerY" secondItem="IGQ-UY-y4F" secondAttribute="centerY" id="qFt-DX-5XZ"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" red="0.25490196078431371" green="0.75686274509803919" blue="0.69019607843137254" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="IGQ-UY-y4F" secondAttribute="bottom" constant="1" id="DQj-Fo-9VS"/>
+                                <constraint firstAttribute="trailing" secondItem="IGQ-UY-y4F" secondAttribute="trailing" constant="8" id="cbW-Ph-qnv"/>
+                                <constraint firstItem="IGQ-UY-y4F" firstAttribute="leading" secondItem="FrY-ZL-IgI" secondAttribute="leading" constant="8" id="wHL-jA-vDW"/>
+                                <constraint firstItem="IGQ-UY-y4F" firstAttribute="top" secondItem="FrY-ZL-IgI" secondAttribute="top" id="zJL-Tz-rKh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTD-3B-pUQ">
+                            <rect key="frame" x="0.0" y="45" width="600" height="45"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP0-cJ-AWk" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="584" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ac-wY-GiX">
+                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="bpf-tE-vsN"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="4Ac-wY-GiX" firstAttribute="centerX" secondItem="eP0-cJ-AWk" secondAttribute="centerX" id="67L-68-r7A"/>
+                                        <constraint firstItem="4Ac-wY-GiX" firstAttribute="centerY" secondItem="eP0-cJ-AWk" secondAttribute="centerY" id="w4k-l6-jX5"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" red="0.25490196079999999" green="0.75686274509999996" blue="0.69019607839999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="eP0-cJ-AWk" firstAttribute="leading" secondItem="pTD-3B-pUQ" secondAttribute="leading" constant="8" id="XaW-uf-HPV"/>
+                                <constraint firstAttribute="bottom" secondItem="eP0-cJ-AWk" secondAttribute="bottom" constant="1" id="mCl-tl-HFL"/>
+                                <constraint firstItem="eP0-cJ-AWk" firstAttribute="top" secondItem="pTD-3B-pUQ" secondAttribute="top" id="pEj-pb-mVZ"/>
+                                <constraint firstAttribute="trailing" secondItem="eP0-cJ-AWk" secondAttribute="trailing" constant="8" id="wo0-XB-1wo"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDS-Yc-KvV">
+                            <rect key="frame" x="0.0" y="90" width="600" height="45"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa7-EA-8ov" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="584" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJK-0X-hrz">
+                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="vXM-LE-rfD"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="kJK-0X-hrz" firstAttribute="centerX" secondItem="Fa7-EA-8ov" secondAttribute="centerX" id="65v-l3-ks9"/>
+                                        <constraint firstItem="kJK-0X-hrz" firstAttribute="centerY" secondItem="Fa7-EA-8ov" secondAttribute="centerY" id="ZVF-WG-o6D"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" red="0.25490196079999999" green="0.75686274509999996" blue="0.69019607839999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Fa7-EA-8ov" firstAttribute="top" secondItem="gDS-Yc-KvV" secondAttribute="top" id="1NF-5n-KAY"/>
+                                <constraint firstItem="Fa7-EA-8ov" firstAttribute="leading" secondItem="gDS-Yc-KvV" secondAttribute="leading" constant="8" id="7nJ-SO-PZw"/>
+                                <constraint firstAttribute="bottom" secondItem="Fa7-EA-8ov" secondAttribute="bottom" constant="1" id="gtO-sV-5b8"/>
+                                <constraint firstAttribute="trailing" secondItem="Fa7-EA-8ov" secondAttribute="trailing" constant="8" id="yrh-Ma-4XS"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXA-7b-USn">
+                            <rect key="frame" x="0.0" y="135" width="600" height="45"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-mF-TVg" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="584" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-pY-2IH">
+                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectFilter:" destination="-1" eventType="touchUpInside" id="LLu-4H-4WI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="GPz-pY-2IH" firstAttribute="centerX" secondItem="cGz-mF-TVg" secondAttribute="centerX" id="o0O-K9-oqB"/>
+                                        <constraint firstItem="GPz-pY-2IH" firstAttribute="centerY" secondItem="cGz-mF-TVg" secondAttribute="centerY" id="pLT-cj-jsX"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" red="0.25490196079999999" green="0.75686274509999996" blue="0.69019607839999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="cGz-mF-TVg" secondAttribute="trailing" constant="8" id="G5d-eV-Gt4"/>
+                                <constraint firstAttribute="bottom" secondItem="cGz-mF-TVg" secondAttribute="bottom" constant="1" id="GaW-WG-jN4"/>
+                                <constraint firstItem="cGz-mF-TVg" firstAttribute="leading" secondItem="xXA-7b-USn" secondAttribute="leading" constant="8" id="Rlm-54-bf1"/>
+                                <constraint firstItem="cGz-mF-TVg" firstAttribute="top" secondItem="xXA-7b-USn" secondAttribute="top" id="TaC-6B-Stk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0xy-Lb-6dA" secondAttribute="bottom" id="Eaw-7V-IMb"/>
+                <constraint firstAttribute="trailing" secondItem="0xy-Lb-6dA" secondAttribute="trailing" id="Eiy-t7-XW1"/>
+                <constraint firstItem="0xy-Lb-6dA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cU1-hF-mLH"/>
+                <constraint firstItem="0xy-Lb-6dA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gXx-fe-keI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="104" y="212"/>
+        </view>
+    </objects>
+</document>

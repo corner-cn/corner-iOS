@@ -27,6 +27,16 @@ class CRBooth: NSObject {
     var images: [String]?
     var thumnail: String?
     
+    var likeStr: String {
+        get {
+            if let c = likeCount {
+                return "\(c)人伸出援手"
+            } else {
+                return "需要你的帮助"
+            }
+        }
+    }
+    
     class func fromData(data:[String: AnyObject]?) -> CRBooth? {
         if let d = data {
             let booth = CRBooth()

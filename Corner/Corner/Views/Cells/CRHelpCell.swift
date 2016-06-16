@@ -22,20 +22,11 @@ class CRHelpCell: UITableViewCell {
     
     @IBOutlet weak var distanceLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func updateContent(booth: CRBooth?) {
         self.titleLabel.text = booth?.boothName
         self.contentLabel.text = booth?.boothStory
-            self.locationLabel.text = booth?.location
-        if let likeCnt = booth?.likeCount {
-            self.helpCountLabel.text = "\(likeCnt)"
-        } else {
-            self.helpCountLabel.text = "0"
-        }
+        self.locationLabel.text = booth?.location
+        self.helpCountLabel.text = booth?.likeStr
         if let thumb = booth?.thumnail {
             self.contentImageView.sd_setImageWithURL(NSURL(string:thumb), placeholderImage: UIImage(named: g_placeholer))
         } else {
