@@ -19,6 +19,8 @@ class CRBooth: NSObject {
     var category: String?
     
     var location: String?
+    var latitude: Double? = 0.0
+    var longitude: Double? = 0.0
     var distance: String?
     var openTime: String?
     
@@ -51,6 +53,15 @@ class CRBooth: NSObject {
             booth.likeCount = d["check_in_num"] as? Int
             booth.images = d["image_urls"] as? [String]
             booth.thumnail = d["thumbnail_url"] as? String
+            
+            if let la = (d["loc_la"] as? String) {
+                booth.latitude = Double(la)
+            }
+            
+            if let lg = (d["loc_lo"] as? String) {
+                booth.longitude = Double(lg)
+            }
+            
             return booth
         }
         return nil

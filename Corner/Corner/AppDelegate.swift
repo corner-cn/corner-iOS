@@ -25,30 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
-//        Service.recommend(nil)
-//        let file1 = NSBundle.mainBundle().pathForResource("a", ofType: "png")
-//        let file2 = NSBundle.mainBundle().pathForResource("b", ofType: "png")
-//        NSOperationQueue().addOperationWithBlock({
-//            Alamofire.upload(
-//                .POST,
-//                "http://api.ijiejiao.cn/v1/image/",
-//                multipartFormData: { multipartFormData in
-//                    multipartFormData.appendBodyPart(fileURL: NSURL.fileURLWithPath(file1!), name: "unicorn")
-//                    multipartFormData.appendBodyPart(fileURL: NSURL.fileURLWithPath(file2!), name: "rainbow")
-//                    multipartFormData.appendBodyPart(data: "3234".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!, name: "bid", mimeType: "text")
-//                },
-//                encodingCompletion: { encodingResult in
-//                    switch encodingResult {
-//                    case .Success(let upload, _, _):
-//                        upload.responseJSON { response in
-//                            debugPrint(response)
-//                        }
-//                    case .Failure(let encodingError):
-//                        print(encodingError)
-//                    }
-//                }
-//            )
-//        })
         return true
     }
     

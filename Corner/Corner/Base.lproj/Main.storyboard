@@ -292,6 +292,7 @@
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstItem="hSl-c5-ctC" firstAttribute="centerY" secondItem="7wu-dC-58c" secondAttribute="centerY" id="fQM-bj-p1j"/>
                                                             <constraint firstItem="fWk-1B-Yja" firstAttribute="leading" secondItem="7wu-dC-58c" secondAttribute="leading" constant="8" id="ffp-HM-GDj"/>
@@ -306,6 +307,9 @@
                                                                 <integer key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="QAv-3D-Miq" appends="YES" id="Khw-Y9-HWO"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qe-NS-Uso" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="110" width="592" height="55"/>
@@ -529,8 +533,61 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPC-8S-gJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QAv-3D-Miq">
+                    <connections>
+                        <segue destination="JJl-tO-tAB" kind="show" identifier="sg_map" id="u8w-nz-Z7S"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1750" y="932"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="HaO-uH-GvQ">
+            <objects>
+                <viewController id="JJl-tO-tAB" customClass="CRMapViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qrx-W6-wFa"/>
+                        <viewControllerLayoutGuide type="bottom" id="gSs-kB-u1h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jdz-oR-SpR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lgP-gM-Pc0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JJl-tO-tAB" id="26K-pj-hsp"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqa-de-KrR">
+                                <rect key="frame" x="18" y="30" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="RIE-bO-bMc"/>
+                                    <constraint firstAttribute="height" constant="22" id="Xdm-6o-gyD"/>
+                                </constraints>
+                                <state key="normal" image="back-button"/>
+                                <connections>
+                                    <action selector="back:" destination="JJl-tO-tAB" eventType="touchUpInside" id="Wtc-Kl-sX0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lgP-gM-Pc0" firstAttribute="leading" secondItem="Jdz-oR-SpR" secondAttribute="leading" id="8mV-jV-sUj"/>
+                            <constraint firstItem="Hqa-de-KrR" firstAttribute="leading" secondItem="Jdz-oR-SpR" secondAttribute="leading" constant="18" id="8nz-lE-anG"/>
+                            <constraint firstItem="gSs-kB-u1h" firstAttribute="top" secondItem="lgP-gM-Pc0" secondAttribute="bottom" id="Qm8-Bo-MMb"/>
+                            <constraint firstItem="lgP-gM-Pc0" firstAttribute="top" secondItem="Jdz-oR-SpR" secondAttribute="top" id="RcR-v2-Oi7"/>
+                            <constraint firstAttribute="trailing" secondItem="lgP-gM-Pc0" secondAttribute="trailing" id="dDh-W5-Dlu"/>
+                            <constraint firstItem="Hqa-de-KrR" firstAttribute="top" secondItem="qrx-W6-wFa" secondAttribute="bottom" constant="10" id="ytk-LF-im3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="lgP-gM-Pc0" id="972-fF-MOd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMy-BJ-84D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="1684"/>
         </scene>
         <!--Image Controller-->
         <scene sceneID="VQI-Ro-PQB">
@@ -584,21 +641,43 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Wi-dR-xvq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三里屯李大姐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-aa-1Ys">
-                                <rect key="frame" x="246" y="533" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kj-LY-0YU">
+                                <rect key="frame" x="245" y="537" width="110" height="23"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3uo-aE-eqc">
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三里屯李大姐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-aa-1Ys" customClass="CRDesignableLabel" customModule="Corner" customModuleProvider="target">
+                                            <rect key="frame" x="1" y="1" width="108" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="o2w-aa-1Ys" firstAttribute="leading" secondItem="3uo-aE-eqc" secondAttribute="leading" constant="1" id="CMi-lv-8QY"/>
+                                        <constraint firstAttribute="bottom" secondItem="o2w-aa-1Ys" secondAttribute="bottom" constant="1" id="DHw-fq-fuM"/>
+                                        <constraint firstAttribute="trailing" secondItem="o2w-aa-1Ys" secondAttribute="trailing" constant="1" id="Vat-RM-JLc"/>
+                                        <constraint firstItem="o2w-aa-1Ys" firstAttribute="top" secondItem="3uo-aE-eqc" secondAttribute="top" constant="1" id="cNH-fq-kMC"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Wi-dR-xvq" firstAttribute="top" secondItem="7bx-tV-0V4" secondAttribute="topMargin" id="632-KZ-Dea"/>
+                            <constraint firstItem="1kj-LY-0YU" firstAttribute="centerX" secondItem="7bx-tV-0V4" secondAttribute="centerX" id="Gc0-av-HyO"/>
                             <constraint firstAttribute="trailing" secondItem="6Wi-dR-xvq" secondAttribute="trailing" id="K0y-ac-bqQ"/>
-                            <constraint firstItem="17I-sg-sY7" firstAttribute="top" secondItem="o2w-aa-1Ys" secondAttribute="bottom" constant="46" id="day-kP-21U"/>
+                            <constraint firstItem="17I-sg-sY7" firstAttribute="top" secondItem="1kj-LY-0YU" secondAttribute="bottom" constant="40" id="UGZ-T0-0Sk"/>
                             <constraint firstItem="17I-sg-sY7" firstAttribute="top" secondItem="6Wi-dR-xvq" secondAttribute="bottom" id="eJi-dU-dky"/>
-                            <constraint firstItem="o2w-aa-1Ys" firstAttribute="centerX" secondItem="7bx-tV-0V4" secondAttribute="centerX" id="h8F-Ve-Gc3"/>
                             <constraint firstItem="6Wi-dR-xvq" firstAttribute="leading" secondItem="7bx-tV-0V4" secondAttribute="leading" id="nEa-ly-lmP"/>
                         </constraints>
                         <connections>

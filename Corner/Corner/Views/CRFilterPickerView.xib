@@ -28,7 +28,7 @@
                                     <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRo-3B-Ki8">
-                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <rect key="frame" x="0.0" y="8" width="584" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,7 +40,10 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="FRo-3B-Ki8" firstAttribute="leading" secondItem="IGQ-UY-y4F" secondAttribute="leading" id="4RX-r8-bcS"/>
+                                        <constraint firstAttribute="trailing" secondItem="FRo-3B-Ki8" secondAttribute="trailing" id="CCa-Rq-6Me"/>
                                         <constraint firstItem="FRo-3B-Ki8" firstAttribute="centerX" secondItem="IGQ-UY-y4F" secondAttribute="centerX" id="RqJ-UX-ipB"/>
+                                        <constraint firstAttribute="trailing" secondItem="FRo-3B-Ki8" secondAttribute="trailing" id="hux-xX-aCE"/>
                                         <constraint firstItem="FRo-3B-Ki8" firstAttribute="centerY" secondItem="IGQ-UY-y4F" secondAttribute="centerY" id="qFt-DX-5XZ"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -65,7 +68,7 @@
                                     <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ac-wY-GiX">
-                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <rect key="frame" x="0.0" y="8" width="584" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,6 +81,8 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="4Ac-wY-GiX" firstAttribute="centerX" secondItem="eP0-cJ-AWk" secondAttribute="centerX" id="67L-68-r7A"/>
+                                        <constraint firstAttribute="trailing" secondItem="4Ac-wY-GiX" secondAttribute="trailing" id="ChO-Cy-GmY"/>
+                                        <constraint firstItem="4Ac-wY-GiX" firstAttribute="leading" secondItem="eP0-cJ-AWk" secondAttribute="leading" id="Hs9-6v-VI6"/>
                                         <constraint firstItem="4Ac-wY-GiX" firstAttribute="centerY" secondItem="eP0-cJ-AWk" secondAttribute="centerY" id="w4k-l6-jX5"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -102,7 +107,7 @@
                                     <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJK-0X-hrz">
-                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <rect key="frame" x="0.0" y="8" width="584" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,7 +120,9 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="kJK-0X-hrz" firstAttribute="centerX" secondItem="Fa7-EA-8ov" secondAttribute="centerX" id="65v-l3-ks9"/>
+                                        <constraint firstItem="kJK-0X-hrz" firstAttribute="leading" secondItem="Fa7-EA-8ov" secondAttribute="leading" id="Ceq-mM-JFA"/>
                                         <constraint firstItem="kJK-0X-hrz" firstAttribute="centerY" secondItem="Fa7-EA-8ov" secondAttribute="centerY" id="ZVF-WG-o6D"/>
+                                        <constraint firstAttribute="trailing" secondItem="kJK-0X-hrz" secondAttribute="trailing" id="dGL-k1-neR"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
@@ -139,7 +146,7 @@
                                     <rect key="frame" x="8" y="0.0" width="584" height="44"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-pY-2IH">
-                                            <rect key="frame" x="277" y="8" width="30" height="29"/>
+                                            <rect key="frame" x="0.0" y="8" width="584" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,6 +158,8 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="GPz-pY-2IH" secondAttribute="trailing" id="8O6-s5-zT1"/>
+                                        <constraint firstItem="GPz-pY-2IH" firstAttribute="leading" secondItem="cGz-mF-TVg" secondAttribute="leading" id="DXs-fS-c8G"/>
                                         <constraint firstItem="GPz-pY-2IH" firstAttribute="centerX" secondItem="cGz-mF-TVg" secondAttribute="centerX" id="o0O-K9-oqB"/>
                                         <constraint firstItem="GPz-pY-2IH" firstAttribute="centerY" secondItem="cGz-mF-TVg" secondAttribute="centerY" id="pLT-cj-jsX"/>
                                     </constraints>

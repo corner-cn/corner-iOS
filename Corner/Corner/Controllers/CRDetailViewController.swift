@@ -33,7 +33,7 @@ class CRDetailViewController: UIViewController {
         self.updateUI(self.booth)
         self.loadBoothDetail(boothId: booth?.boothId!)
     }
-    
+        
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -102,6 +102,9 @@ class CRDetailViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "sg_iamge" {
             iamgeViewController = segue.destinationViewController as! CRImageController
+        } else if segue.identifier == "sg_map" {
+            let mapViewController = segue.destinationViewController as! CRMapViewController
+            mapViewController.booth = booth
         }
     }
 }

@@ -94,6 +94,13 @@ class CRCategoryViewController: UITableViewController,UISearchControllerDelegate
         
         self.refresh()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.pickerWindow != nil {
+            self.hidePickerView()
+        }
+    }
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
@@ -105,14 +112,19 @@ class CRCategoryViewController: UITableViewController,UISearchControllerDelegate
     }
     
     func setupPickerView() {
-        pickerWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+        var frame = UIScreen.mainScreen().bounds
+        frame.origin.y = 108.0
+        pickerWindow = UIWindow(frame:frame)
+//        pickerWindow.translatesAutoresizingMaskIntoConstraints = false
+        let tapgz = UITapGestureRecognizer(target: self, action: #selector(hidePickerView))
+        pickerWindow.addGestureRecognizer(tapgz)
         NSBundle.mainBundle().loadNibNamed("CRFilterPickerView", owner: self, options: nil)
         pickerWindow.addSubview(self.pickView)
         self.pickView.translatesAutoresizingMaskIntoConstraints = false
         let views = ["picker": self.pickView]
         let constraintX = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[picker]-0-|", options: .AlignAllTop, metrics: nil, views: views)
         pickerWindow.addConstraints(constraintX)
-        let constraintY = NSLayoutConstraint.constraintsWithVisualFormat("V:|-108-[picker]", options: .AlignAllTop, metrics: nil, views: views)
+        let constraintY = NSLayoutConstraint.constraintsWithVisualFormat("V:|-(-108)-[picker]", options: .AlignAllTop, metrics: nil, views: views)
         pickerWindow.addConstraints(constraintY)
         self.pickerViewHeightConstraint = NSLayoutConstraint(item: self.pickView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0)
         self.pickView.addConstraint(self.pickerViewHeightConstraint)
@@ -238,6 +250,11 @@ class CRCategoryViewController: UITableViewController,UISearchControllerDelegate
 
         print("\(searchController.searchBar.text)")
     }
+    
+    func willPresentSearchController(searchController: UISearchController) {
+        self.hidePickerView()
+    }
+
     
     func didPresentSearchController(searchController: UISearchController) {
         self.tableView.reloadData()
