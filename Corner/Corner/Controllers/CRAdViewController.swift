@@ -31,4 +31,15 @@ class CRAdViewController: UIViewController {
             self.adTitle.text = b.boothName
         }
     }
+    
+    @IBAction func tap(sender: AnyObject) {
+        if (booth?.boothId != nil) {
+            self.performSegueWithIdentifier("sg_hot_detail", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! CRDetailViewController
+        vc.booth = booth
+    }
 }

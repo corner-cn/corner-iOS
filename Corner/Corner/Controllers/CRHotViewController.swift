@@ -82,3 +82,29 @@ transitionCompleted completed: Bool) {
         self.view.addConstraints(yConstraints)
     }
 }
+
+class CRImageController : CRHotViewController {
+    
+    var booth: CRBooth?
+    
+    override func loadad() {
+        if booth != nil {
+            var booths: [CRBooth] = []
+            for image in (booth?.images)! {
+                let booth = CRBooth()
+                booth.images =  [image]
+                booths.append(booth)
+            }
+            for booth in booths {
+                if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CR-AD-1") as? CRAdViewController {
+                    vc.booth = booth
+                    self.ads.append(vc)
+                    self.setViewControllers([self.ads[0]], direction: .Forward, animated: true, completion: nil)
+                    self.pc.numberOfPages = booths.count
+                    self.pc.currentPage = 0
+                }
+            }
+        }
+    }
+}
+

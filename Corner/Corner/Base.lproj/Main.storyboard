@@ -226,7 +226,7 @@
                                             <constraint firstAttribute="height" constant="260" id="Com-bi-KjT"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="A10-51-Uqh" kind="embed" id="1PX-o6-ZvP"/>
+                                            <segue destination="A10-51-Uqh" kind="embed" identifier="sg_iamge" id="1PX-o6-ZvP"/>
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xo9-v3-g6r">
@@ -532,10 +532,10 @@
             </objects>
             <point key="canvasLocation" x="1750" y="932"/>
         </scene>
-        <!--Hot View Controller-->
+        <!--Image Controller-->
         <scene sceneID="VQI-Ro-PQB">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="A10-51-Uqh" customClass="CRHotViewController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="A10-51-Uqh" customClass="CRImageController" customModule="Corner" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8T-EK-US7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2480" y="780"/>
@@ -592,6 +592,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Wi-dR-xvq" firstAttribute="top" secondItem="7bx-tV-0V4" secondAttribute="topMargin" id="632-KZ-Dea"/>
                             <constraint firstAttribute="trailing" secondItem="6Wi-dR-xvq" secondAttribute="trailing" id="K0y-ac-bqQ"/>
@@ -600,15 +601,24 @@
                             <constraint firstItem="o2w-aa-1Ys" firstAttribute="centerX" secondItem="7bx-tV-0V4" secondAttribute="centerX" id="h8F-Ve-Gc3"/>
                             <constraint firstItem="6Wi-dR-xvq" firstAttribute="leading" secondItem="7bx-tV-0V4" secondAttribute="leading" id="nEa-ly-lmP"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2bg-hg-XQT" appends="YES" id="ljr-HD-ouN"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="adImageView" destination="6Wi-dR-xvq" id="DvP-WV-lct"/>
                         <outlet property="adTitle" destination="o2w-aa-1Ys" id="Gzo-zc-Cy6"/>
+                        <segue destination="8qc-lx-0wk" kind="presentation" identifier="sg_hot_detail" id="jXB-e5-YjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJ9-rW-pdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2bg-hg-XQT">
+                    <connections>
+                        <action selector="tap:" destination="fQK-eq-imd" id="tL7-te-MVQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="135" y="932"/>
+            <point key="canvasLocation" x="953" y="1684"/>
         </scene>
     </scenes>
     <resources>
@@ -626,6 +636,6 @@
         <image name="time" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wVT-tm-MkB"/>
+        <segue reference="jXB-e5-YjD"/>
     </inferredMetricsTieBreakers>
 </document>

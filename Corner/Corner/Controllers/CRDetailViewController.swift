@@ -26,6 +26,8 @@ class CRDetailViewController: UIViewController {
     
     @IBOutlet weak var storyLabel: UILabel!
     
+    var iamgeViewController: CRImageController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUI(self.booth)
@@ -80,6 +82,8 @@ class CRDetailViewController: UIViewController {
                 hud.hide(true)
                 self.booth = booth
                 self.updateUI(self.booth)
+                self.iamgeViewController.booth = booth
+                self.iamgeViewController.loadad()
             }
         }
     }
@@ -92,6 +96,12 @@ class CRDetailViewController: UIViewController {
             self.timeLabel.text = booth?.openTime
             self.storyTitleLabel.text = booth?.boothOwner
             self.storyLabel.text = booth?.boothStory
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "sg_iamge" {
+            iamgeViewController = segue.destinationViewController as! CRImageController
         }
     }
 }

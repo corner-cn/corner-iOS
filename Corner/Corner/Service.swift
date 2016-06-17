@@ -74,7 +74,7 @@ class Service: NSObject {
             multipartFormData: { multipartFormData in
                 for image in images {
                     let imageData = UIImageJPEGRepresentation(image, 0.6)
-                    multipartFormData.appendBodyPart(data: imageData!, name:"image", mimeType: "image/jpeg")
+                    multipartFormData.appendBodyPart(data: imageData!, name:"image",fileName: "image.jpeg", mimeType: "image/jpeg")
                 }
                 multipartFormData.appendBodyPart(data: boothId.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!, name: "bid", mimeType: "text")
             },
