@@ -36,6 +36,8 @@
 		488AE1A81D0D4D52004AA676 /* CRMainTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488AE1A71D0D4D52004AA676 /* CRMainTableSectionHeader.xib */; };
 		48B3D6641D10183100D1616D /* CRCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3D6631D10183100D1616D /* CRCityViewController.swift */; };
 		48B3D6661D101D8300D1616D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B3D6651D101D8300D1616D /* Constant.swift */; };
+		48E228A11D13AAC30049B3A4 /* CRSimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E2289F1D13AAC30049B3A4 /* CRSimpleCell.swift */; };
+		48E228A21D13AAC30049B3A4 /* CRSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E228A01D13AAC30049B3A4 /* CRSimpleCell.xib */; };
 		930DBC988E3CF328998D1AE3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EED0349D25579CF798E11 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		488AE1A71D0D4D52004AA676 /* CRMainTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRMainTableSectionHeader.xib; sourceTree = "<group>"; };
 		48B3D6631D10183100D1616D /* CRCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRCityViewController.swift; sourceTree = "<group>"; };
 		48B3D6651D101D8300D1616D /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		48E2289F1D13AAC30049B3A4 /* CRSimpleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRSimpleCell.swift; sourceTree = "<group>"; };
+		48E228A01D13AAC30049B3A4 /* CRSimpleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRSimpleCell.xib; sourceTree = "<group>"; };
 		5775F756E344D169A34AAF6B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A85EED0349D25579CF798E11 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA99EBDA9122527261EE90B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				488AE1A11D0D43D5004AA676 /* CRHelpCell.swift */,
 				488AE1A21D0D43D5004AA676 /* CRHelpCell.xib */,
 				488AE1A71D0D4D52004AA676 /* CRMainTableSectionHeader.xib */,
+				48E2289F1D13AAC30049B3A4 /* CRSimpleCell.swift */,
+				48E228A01D13AAC30049B3A4 /* CRSimpleCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				485EEEB11D129ECF00B5264F /* CRCategoryTableSectionHeader.xib in Resources */,
 				4844D5EE1D0D05660082A84C /* Main.storyboard in Resources */,
 				488AE1A81D0D4D52004AA676 /* CRMainTableSectionHeader.xib in Resources */,
+				48E228A21D13AAC30049B3A4 /* CRSimpleCell.xib in Resources */,
 				485EEEB51D12A7FF00B5264F /* CRFilterPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +461,7 @@
 				4844D5E91D0D05660082A84C /* AppDelegate.swift in Sources */,
 				4844D6181D0D0C490082A84C /* CRHotViewController.swift in Sources */,
 				488AE1A01D0D408C004AA676 /* CRDesignableView.swift in Sources */,
+				48E228A11D13AAC30049B3A4 /* CRSimpleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@ class CRDetailViewController: UIViewController {
     }
     
     @IBAction func share(sender: AnyObject) {
-        if self.booth != nil {
+        if self.booth != nil && self.booth?.thumnail != nil {
             SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: (booth?.thumnail!)!), options:SDWebImageDownloaderOptions(), progress: nil) {
                 image, data, error, r in
                 let url = NSURL(string: "http://ijiejiao.cn")
@@ -59,9 +59,17 @@ class CRDetailViewController: UIViewController {
                     }
                 })
             }
+        } else {
+            let url = NSURL(string: "http://ijiejiao.cn")
+            dispatch_async(dispatch_get_main_queue(), {
+                let shareViewController = UIActivityViewController(activityItems:[(self.booth?.boothName)!, UIImage(named:g_placeholer)!, url!], applicationActivities: nil)
+                self.presentViewController(shareViewController, animated: true, completion: nil)
+                shareViewController.completionWithItemsHandler = {(activetype: String?, r:Bool,items:[AnyObject]?, error: NSError?) -> Void in
+                    shareViewController.dismissViewControllerAnimated(true, completion: nil)
+                }
+            })
         }
     }
-    
     
     func loadBoothDetail(boothId id: String?) {
         if id != nil {
@@ -86,15 +94,4 @@ class CRDetailViewController: UIViewController {
             self.storyLabel.text = booth?.boothStory
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

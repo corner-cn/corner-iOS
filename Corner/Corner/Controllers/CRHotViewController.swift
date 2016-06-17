@@ -10,7 +10,7 @@ import UIKit
 
 class CRHotViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
-    var ads: NSMutableArray = []
+    var ads: [UIViewController] = []
     
     var pc: UIPageControl!
     
@@ -22,34 +22,32 @@ class CRHotViewController: UIPageViewController, UIPageViewControllerDelegate, U
         self.initliaze()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) ->UIViewController? {
-        let index = ads.indexOfObject(viewController)
-        if index == 0 {
-            return nil
-        } else {
-            return ads.objectAtIndex(index - 1) as? UIViewController
+        if let index = ads.indexOf(viewController) {
+            if index == 0 {
+                return nil
+            } else {
+                return ads[index - 1]
+            }
         }
+        return nil
     }
-    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) ->UIViewController? {
-        let index = ads.indexOfObject(viewController)
-        if index == ads.count - 1 {
-            return nil
-        } else {
-            return ads.objectAtIndex(index + 1) as? UIViewController
+        if let index = ads.indexOf(viewController) {
+            if index == ads.count - 1 {
+                return nil
+            } else {
+                return ads[index + 1]
+            }
         }
+        return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController],
 transitionCompleted completed: Bool) {
         if let vc = self.viewControllers?.first {
-            pc.currentPage = ads.indexOfObject(vc)
+            pc.currentPage = ads.indexOf(vc)!
         }
     }
     
@@ -59,8 +57,8 @@ transitionCompleted completed: Bool) {
                 for booth in booths! {
                     if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CR-AD-1") as? CRAdViewController {
                         vc.booth = booth
-                        self.ads.addObject(vc)
-                        self.setViewControllers([self.ads[0] as! UIViewController], direction: .Forward, animated: true, completion: nil)
+                        self.ads.append(vc)
+                        self.setViewControllers([self.ads[0]], direction: .Forward, animated: true, completion: nil)
                         self.pc.numberOfPages = (booths?.count)!
                         self.pc.currentPage = 0
                     }
@@ -83,13 +81,4 @@ transitionCompleted completed: Bool) {
         self.view.addConstraint(xConstraints)
         self.view.addConstraints(yConstraints)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

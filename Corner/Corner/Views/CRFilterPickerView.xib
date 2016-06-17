@@ -14,7 +14,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CRFilterPickerView" customModule="Corner" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="CRFilterPickerView" customModule="Corner" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -181,7 +181,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="104" y="212"/>
+            <point key="canvasLocation" x="202" y="162"/>
         </view>
     </objects>
 </document>

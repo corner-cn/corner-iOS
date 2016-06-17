@@ -54,13 +54,13 @@ class CRDesignableButton: UIButton {
     
     var _dashCount : Int = 0
     
-    override init(frame: CGRect) {
-        super.init(frame:frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame:frame)
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
     
     @IBInspectable var lineColor : UIColor {
         get {
@@ -78,6 +78,11 @@ class CRDesignableButton: UIButton {
         set {
             _dashCount = newValue
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.setNeedsDisplay()
     }
     
     override func drawRect(rect: CGRect) {

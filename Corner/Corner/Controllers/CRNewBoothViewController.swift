@@ -24,19 +24,25 @@ class CRNewBoothViewController: UIViewController {
     
     @IBOutlet var categoryButtons: [UIButton]!
     
+    let categories = ["snacks", "grocery", "handicraft"]
+    
+    var category: String!
+    
+    var newBooth: CRBooth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.category = self.categories[0]
     }
     
     @IBAction func next(sender: AnyObject) {
+        newBooth = CRBooth()
+        newBooth.boothOwner = nameTextField.text
+        newBooth.boothName = goodsTextField.text
+        newBooth.location = location
+        newBooth.openTime = timeTextField.text
+        newBooth.category = self.category
+        self.performSegueWithIdentifier("sg_new_story", sender:newBooth)
     }
     
     @IBAction func back(sender: AnyObject) {
@@ -65,7 +71,6 @@ class CRNewBoothViewController: UIViewController {
         }
     }
     
-    
     @IBAction func chooseCategory(sender: UIButton) {
         for b in categoryButtons {
             b.setImage(UIImage(named: "radio-n"), forState: .Normal)
@@ -75,15 +80,14 @@ class CRNewBoothViewController: UIViewController {
         let selectedColor = UIColor(red: 88/255.0, green: 203/255.0, blue: 161/255.0, alpha: 1.0)
         sender.setImage(UIImage(named: "radio-y"), forState: .Normal)
         sender.setTitleColor(selectedColor, forState: .Normal)
+        
+        if let index = self.categoryButtons.indexOf(sender) {
+            self.category = self.categories[index]
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let storyController = segue.destinationViewController as! CRStoryViewController
+        storyController.booth = newBooth
     }
-    */
 }

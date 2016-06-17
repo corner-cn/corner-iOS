@@ -12,6 +12,4 @@ class CRFilterPickerView: UIView {
 
     var type: Int?
     
-    @IBOutlet var buttons: [UIButton]!
-    
 }

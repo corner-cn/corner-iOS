@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="RmN-Fo-8gJ" customClass="CRSimpleCell" customModule="Corner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RmN-Fo-8gJ" id="1nF-pI-DZJ">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUW-Oq-cCE" customClass="CRDashLineView" customModule="Corner" customModuleProvider="target">
+                        <rect key="frame" x="16" y="0.0" width="568" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-wy-kWN">
+                                <rect key="frame" x="0.0" y="19" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PnK-wy-kWN" firstAttribute="centerY" secondItem="QUW-Oq-cCE" secondAttribute="centerY" id="ZHr-KF-jfU"/>
+                            <constraint firstAttribute="height" constant="60" id="ef2-eR-JpM"/>
+                            <constraint firstItem="PnK-wy-kWN" firstAttribute="leading" secondItem="QUW-Oq-cCE" secondAttribute="leading" id="egd-ww-cDQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                <color key="value" red="0.25490196079999999" green="0.75686274509999996" blue="0.69019607839999997" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="dashCount">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="QUW-Oq-cCE" secondAttribute="trailing" constant="16" id="AvN-7R-HNA"/>
+                    <constraint firstItem="QUW-Oq-cCE" firstAttribute="leading" secondItem="1nF-pI-DZJ" secondAttribute="leading" constant="16" id="X10-k9-k5U"/>
+                    <constraint firstItem="QUW-Oq-cCE" firstAttribute="top" secondItem="1nF-pI-DZJ" secondAttribute="top" id="dXX-kX-RNl"/>
+                    <constraint firstAttribute="bottom" secondItem="QUW-Oq-cCE" secondAttribute="bottom" id="nzK-Ja-efd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="crLabel" destination="PnK-wy-kWN" id="Na9-68-2s4"/>
+            </connections>
+            <point key="canvasLocation" x="462" y="344"/>
+        </tableViewCell>
+    </objects>
+</document>

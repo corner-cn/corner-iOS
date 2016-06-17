@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 import MobileCoreServices
 
+import MBProgressHUD
+
 class CRStoryViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var storyImageView: UIImageView!
@@ -18,12 +20,13 @@ class CRStoryViewController: UIViewController, UITextViewDelegate,UIImagePickerC
     
     @IBOutlet weak var storyTextView: UITextView!
     
+    var booth: CRBooth!
+    
+    var images: [UIImage] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
     
     @IBAction func addPic(sender: AnyObject) {
         let pc = UIImagePickerController()
@@ -50,6 +53,7 @@ class CRStoryViewController: UIViewController, UITextViewDelegate,UIImagePickerC
         if mediaType as! String == kUTTypeImage as String {
             let photo = info[UIImagePickerControllerEditedImage] as! UIImage
             self.storyImageView.image = photo
+            self.images.append(photo)
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -61,17 +65,18 @@ class CRStoryViewController: UIViewController, UITextViewDelegate,UIImagePickerC
     @IBAction func back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
     @IBAction func publish(sender: AnyObject) {
-        //todo
+        self.view.endEditing(true)
+        booth.boothStory = storyTextView.text
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        Service.newBooth(booth) {
+            newBooth in
+            print("new booth\(newBooth?.boothId)")
+            Service.uploadBoothImages(self.images, boothId:(newBooth?.boothId)!, completion: {r in
+                //todo
+                hud.hide(true)
+            })
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

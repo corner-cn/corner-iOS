@@ -16,11 +16,11 @@ typealias boothsCompletion = ([CRBooth]?)-> Void
 class Service: NSObject {
     
     class func recommend(completion:((booths: [CRBooth]?)-> Void)?){
-        _get(["query_type":"recommendation"], completion: completion)
+        _get(["query_type":"recommendation", "my_position": self.position()], completion: completion)
     }
     
     class func priority(completion:((booths: [CRBooth]?)-> Void)?){
-        _get(["query_type":"priority"], completion: completion)
+        _get(["query_type":"priority", "my_position": self.position()], completion: completion)
     }
     
     class func boothsFilterByDistance(distance: Int, category: String, order: String, completion: boothsCompletion?) {
@@ -28,12 +28,70 @@ class Service: NSObject {
         _get(parameters, completion: completion)
     }
     
-    class func boothDetail(boothId id: String, completion:((CRBooth?)->Void)?) {
-        Alamofire.request(.GET, "http://api.ijiejiao.cn/v1/booth/\(id)").responseJSON {
+    class func search(keyword keyword: String, completion: boothsCompletion?) {
+        let parameters = ["query_type":"keywords", "query_params":["keywords": [keyword]]]
+        _get(parameters, completion: completion)
+    }
+    
+    class func newBooth(booth: CRBooth, completion:((CRBooth?)->Void)?) {
+        var la = "0", lo = "0"
+        if let x = g_location?.coordinate.latitude, y = g_location?.coordinate.longitude {
+            la = "\(x)"
+            lo = "\(y)"
+        }
+        let parameters: [String: AnyObject] = ["booth_name":booth.boothName!,
+                                               "booth_owner": booth.boothOwner!,
+                                               "category": booth.category!,
+                                               "booth_story": booth.boothStory!,
+                                               "open_time": booth.openTime!,
+                                               "loc_text": booth.location!,
+                                               "loc_la": la,
+                                               "loc_lo": lo]
+        Alamofire.request(.POST, "http://api.ijiejiao.cn/v1/booth/", parameters: parameters, encoding: .JSON, headers: nil).responseJSON {
             response in
             
             var booth: CRBooth? = nil
             
+            switch response.result {
+            case .Success:
+                if let data = extract(response.result.value as? [String: AnyObject]) {
+                    let booths = CRBooth.fromArrayData(data as? [[String: AnyObject]])
+                    booth = booths.first
+                }
+            case .Failure:
+                break
+            }
+            if completion != nil {
+                completion!(booth)
+            }
+        }
+    }
+    
+    class func uploadBoothImages(images: [UIImage], boothId: String, completion:((Bool)->Void)) {
+        Alamofire.upload(
+            .POST,
+            "http://api.ijiejiao.cn/v1/image/\(boothId)",
+            multipartFormData: { multipartFormData in
+                for image in images {
+                    let imageData = UIImageJPEGRepresentation(image, 0.6)
+                    multipartFormData.appendBodyPart(data: imageData!, name:"image", mimeType: "image/jpeg")
+                }
+                multipartFormData.appendBodyPart(data: boothId.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!, name: "bid", mimeType: "text")
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .Success(_,_,_):
+                    completion(true)
+                case .Failure(_):
+                    completion(false)
+                }
+            }
+        )
+    }
+    
+    class func boothDetail(boothId id: String, completion:((CRBooth?)->Void)?) {
+        Alamofire.request(.GET, "http://api.ijiejiao.cn/v1/booth/\(id)").responseJSON { response in
+            var booth: CRBooth? = nil
             switch response.result {
             case .Success:
                 if let data = extract(response.result.value as? [String: AnyObject]) {
@@ -73,7 +131,6 @@ class Service: NSObject {
                     return d["data"]
                 }
             }
-            
         }
         return nil
     }

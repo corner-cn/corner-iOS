@@ -297,7 +297,6 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="next:" destination="Mce-RT-upZ" id="fOF-UP-UXv"/>
-                                <segue destination="3dL-WC-I7k" kind="show" id="ayG-Ft-6aX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -310,6 +309,7 @@
                         <outletCollection property="categoryButtons" destination="NoA-yL-beb" collectionClass="NSMutableArray" id="Dxc-Lx-G9y"/>
                         <outletCollection property="categoryButtons" destination="03h-sC-qcS" collectionClass="NSMutableArray" id="HWs-Kw-d6w"/>
                         <outletCollection property="categoryButtons" destination="i3C-es-8qe" collectionClass="NSMutableArray" id="aTf-uW-zAx"/>
+                        <segue destination="3dL-WC-I7k" kind="show" identifier="sg_new_story" id="2uQ-To-o9e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUX-ww-UdM" userLabel="First Responder" sceneMemberID="firstResponder"/>

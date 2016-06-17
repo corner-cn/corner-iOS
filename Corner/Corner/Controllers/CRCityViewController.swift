@@ -16,6 +16,10 @@ class CRCityViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let cellNib = UINib(nibName: "CRSimpleCell", bundle: nil)
+        self.tableView.registerNib(cellNib, forCellReuseIdentifier: reuseIdentifier)
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
     }
@@ -34,10 +38,9 @@ class CRCityViewController: UITableViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CRCityCell
-        cell.cityLabel.text = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CRSimpleCell
+        cell.crLabel.text = cities[indexPath.row]
         return cell
     }
     
@@ -47,21 +50,4 @@ class CRCityViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().postNotificationName(nt_ChangeCity, object:nil)
         self.cancel(self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-class CRCityCell : UITableViewCell {
-    
-    @IBOutlet weak var cityLabel: UILabel!
-    
 }
